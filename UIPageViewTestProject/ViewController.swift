@@ -10,20 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 	
-	/*var imageName : String? {
+	var imageName : String? {
 		didSet {
-			imgView.image = UIImage(named: imageName!)
+			imgView?.image = UIImage(named: imageName!)
 		}
-	}*/
-	@IBOutlet weak var imgView: UIImageView!
+	}
+	@IBOutlet weak var imgView: UIImageView?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = UIColor.white
-
-		let usersStoredInfo = UserDefaults.standard
-		let imgName = usersStoredInfo.object(forKey: "nameImg") as? String ?? ""
-		imgView.image = UIImage(named: imgName)
+		imgView?.image = UIImage(named: imageName!)
 	}
+	
+	
+	
+	
 }
 
