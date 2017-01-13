@@ -10,11 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 	
-	var imageName : String? {
-		didSet {
-			imgView?.image = UIImage(named: imageName!)
-		}
-	}
+	var imageName : String? = ""
 	@IBOutlet weak var imgView: UIImageView?
 
 	override func viewDidLoad() {
@@ -22,9 +18,5 @@ class ViewController: UIViewController {
 		view.backgroundColor = UIColor.white
 		imgView?.image = UIImage(named: imageName!)
 	}
-	
-	
-	
-	
 }
 

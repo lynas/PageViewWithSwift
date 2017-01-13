@@ -11,12 +11,11 @@ import UIKit
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
 	
 	let imageNames = ["dog0","dog1","dog2","dog3"]
-	let usersStoredInfo = UserDefaults.standard
 	var imgPos = 0
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+		imgPos = 0
 		self.dataSource = self
 		let eachView = self.storyboard?.instantiateViewController(withIdentifier: "imageScroller") as! ViewController
 		eachView.imageName = imageNames[imgPos]
@@ -25,7 +24,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
 	
 	func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-		print(imageNames[imgPos])
 		if imgPos == (imageNames.count - 1) {
 			return nil
 		}
@@ -36,7 +34,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
 	}
 	
 	func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-		print(imageNames[imgPos])
 		if imgPos == 0 {
 			return nil
 		}
